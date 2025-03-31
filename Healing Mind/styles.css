@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+
+:root {
+    /* Colores personalizados */
+    --light: #e6eee1;
+    --medium: #52796f;
+    --accent: #018060;
+    --dark: #19302e;
+    --max-width: 1200px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.btn {
+    position: absolute;
+    padding: 1rem 2rem;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--accent);
+    color: var(--light);
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--medium);
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    background-color: var(--dark);
+    color: var(--dark);
+}
+
+body::after {
+    position: fixed;
+    content: "";
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 0;
+    background-color: var(--dark);
+    z-index: -1;
+    animation: body-bg 1s ease-in-out forwards;
+}
+
+@keyframes body-bg {
+    0% {
+        width: 0vw;
+    }
+
+    100% {
+        width: 50vw;
+    }
+}
+
+body::before {
+    position: fixed;
+    content: "0";
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    font-size: 70rem;
+    font-weight: 200;
+    color: var(--medium);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.container {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+nav {
+    padding-block: 2rem 0;
+    padding-inline: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav__links a {
+    font-weight: 500;
+}
+
+.nav__links .logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.nav__left a {
+    color: var(--light);
+}
+
+.nav__right a {
+    color: var(--accent);
+}
+
+.nav__links a:hover {
+    color: var(--medium);
+}
+
+.letter-s {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40rem;
+    line-height: 40rem;
+    font-weight: 900;
+    color: var(--medium);
+}
+
+
+.container h4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 5rem;
+    color: var(--light);
+    letter-spacing: 25px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    /* Sombra para mejorar visibilidad */
+}
+
+.text__left {
+    transform: translate(calc(-50% - 250px), -50%);
+}
+
+.text__right {
+    transform: translate(calc(-50% + 250px), -50%);
+}
+
+.container .explore {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 225px));
+    color: var(--dark);
+    background-color: var(--light);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+}
+
+.container .print {
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%) rotate(90deg);
+    padding: calc(1rem - 4px) calc(2rem - 4px);
+    color: var(--light);
+    background-color: transparent;
+    border: 1px solid var(--light);
+}
+
+.container .catalog {
+    top: 25%;
+    left: 0;
+    transform: translate(0, -50%) rotate(-90deg);
+    padding: calc(1rem - 4px) calc(2rem - 4px);
+    color: var(--light);
+    background-color: transparent;
+    border: 1px solid var(--light);
+}
+
+.container h5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.container h5::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100px;
+    top: 50%;
+}
+
+.feature-1 {
+    color: var(--light);
+    transform: translate(calc(-50% - 300px), calc(-50% - 200px));
+}
+
+.feature-2 {
+    color: var(--light);
+    transform: translate(calc(-50% + 300px), calc(-50% - 200px));
+}
+
+.feature-3 {
+    color: var(--light);
+    transform: translate(calc(-50% - 300px), calc(-50% + 200px));
+}
+
+.feature-4 {
+    color: var(--light);
+    transform: translate(calc(-50% + 300px), calc(-50% + 200px));
+}
+
+.feature-1::after,
+.feature-3::after {
+    right: 0;
+    transform: translate(calc(100% + 40px), -50%);
+    background-color: var(--light);
+}
+
+.feature-2::after,
+.feature-4::after {
+    left: 0;
+    transform: translate(calc(-100% - 40px), -50%);
+    background-color: var(--light);
+}
+
+.footer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding-inline: 1rem;
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: var(--light);
+}
+
+.footer__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer__links li {
+    opacity: 0;
+    animation: fade__in 0.3s ease-in-out forwards;
+}
+
+.footer__links li:nth-child(1) {
+    animation-delay: 6s;
+}
+
+.footer__links li:nth-child(2) {
+    animation-delay: 6.5s;
+}
+
+.footer__links li:nth-child(3) {
+    animation-delay: 7s;
+}
+
+@keyframes fade__in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.footer__links a {
+    color: var(--light);
+}
+
+.footer__links a:hover {
+    color: var(--medium);
+}
+
+.inspiring-quotes {
+    position: absolute;
+    top: 60%;
+    /* Ajusta según donde quieras ubicar la frase */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: var(--light);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/*Estilo seccion about*/
+.section-about {
+    padding: 4rem 2rem;
+    background-color: var(--light);
+    color: var(--dark);
+    text-align: center;
+}
+
+.section-about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.about-content img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    max-width: 700px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/*Estilo seccion download*/
+.section-download {
+    text-align: center;
+    /* Centrar el contenido */
+    padding: 50px 0;
+}
+
+.section-download h2 {
+    font-size: 2rem;
+    color: var(--light);
+    margin-bottom: 10px;
+}
+
+.section-download p {
+    font-size: 1.2rem;
+    color: var(--light);
+    margin-bottom: 20px;
+}
+
+/* Estilo sección Features */
+.section-features {
+    text-align: center;
+    padding: 60px 0;
+    background-color: var(--light);
+}
+
+.section-features h2 {
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.section-features p {
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin-bottom: 30px;
+}
+
+/* Contenedor de Features */
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Tarjetas de cada Feature */
+.feature {
+    background: var(--accent);
+    color: var(--light);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: var(--light);
+}
+
+/* Efecto hover */
+.feature:hover {
+    transform: scale(1.05);
+    background: var(--medium);
+}
+
+
+/* Contenedor de los botones */
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Espacio entre los botones */
+}
+
+/* Botones */
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: var(--light);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    gap: 10px;
+    transition: background 0.3s;
+}
+
+.download-button:hover {
+    background: var(--medium);
+}
+
+/* Iconos */
+.download-button img {
+    width: 24px;
+    height: 24px;
+}
+
+@media (width > 540px) {}
+
+@media (width > 768px) {}
+
+@media (width > 1024px) {}
